@@ -1,0 +1,396 @@
+/* .............  GENERAL  ............. */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Satisfy&display=swap");
+
+:root {
+  --white: #faf5f5;
+  --halfWhite: rgb(236, 225, 225);
+  --dark: #201f1f;
+  --halfDark: rgba(30, 30, 30, 0.8);
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+button,
+input,
+ul,
+a {
+  all: unset;
+}
+
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #cd6262;
+  margin-bottom: 2rem;
+  border-bottom: #cd6262 1px solid;
+}
+
+/* .............  DARK MODE  ............. */
+
+.dark-mode {
+  position: absolute;
+  right: 2em;
+  text-align: center;
+  font-size: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: var(--dark);
+}
+
+.body-night {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.header-night {
+  background-color: #cd6262;
+}
+
+.none {
+  display: none;
+}
+
+.fa-moon {
+  color: var(--white);
+}
+
+.fa-sun {
+  color: gold;
+}
+
+/* .............  HEADER  ............. */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  padding: 2%;
+  background-color: #cd6262;
+  position: sticky;
+  top: 0;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+
+nav {
+  width: 100vw;
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: large;
+  font-weight: bold;
+}
+
+.toggle {
+  display: none;
+}
+
+/* .............  GENERAL .............. */
+
+#about,
+#services,
+#portfolio,
+#works,
+#formu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-weight: bold;
+}
+
+/* .............  ABOUT .............. */
+
+#about {
+  gap: 2%;
+  font-weight: bold;
+}
+
+#about img {
+  width: 20%;
+  margin-bottom: 2rem;
+  border-bottom: solid 1rem #cd6262;
+  border-radius: 50%;
+}
+
+#about p {
+  width: 80%;
+  font-size: large;
+  padding: 1%;
+}
+
+/* .............  SERVICES  ............. */
+
+#services ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px 100px;
+}
+
+#services ul li {
+  width: 250px;
+  height: 250px;
+  font-size: large;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border: 4mm ridge #cd6262;
+}
+
+#services li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  color: #201f1f;
+}
+
+#services button {
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+/* .............  SKILLS  ............. */
+
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#skills img {
+  width: 175px;
+}
+
+/* .............  WORKS  ............. */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card-box {
+  width: 350px;
+  height: 225px;
+  margin: 0.5em 1em;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-box:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #cd6262;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front img {
+  width: 350px;
+  height: 225px;
+}
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.card-back span {
+  display: block;
+}
+
+.card-back hr {
+  width: 50%;
+}
+.card-back a:hover {
+  cursor: pointer;
+}
+.card-back span {
+  text-align: center;
+}
+/* .............  FORM  ............. */
+
+form input,
+form textarea {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  width: 32rem;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+  border: solid 1px #cd6262;
+}
+
+form input[type="email"],
+form input[type="text"] {
+  width: 30.6rem;
+}
+
+form textarea {
+  height: 120px;
+}
+form input[type="submit"] {
+  text-align: center;
+  width: 30.6rem;
+  background-color: #cd6262;
+}
+
+/* .............  FOOTER  ............. */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  padding: 1em 0 2em;
+  font-weight: bold;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2em 0;
+}
+
+footer i {
+  font-size: 1.2em;
+  margin: 0 0.1em;
+  cursor: pointer;
+}
+
+.network i {
+  font-size: 2.2em;
+}
+
+footer p {
+  text-align: center;
+}
+
+.top {
+  cursor: pointer;
+}
+
+/* .............  MEDIA QUERIES LESS THAN 800px  ............. */
+
+@media screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    padding: 1rem;
+    background-color: #cd6262;
+    transform: translateX(-100%);
+    transition: transform 1s;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  .open nav ul {
+    transform: translateX(0);
+  }
+
+  .toggle {
+    display: block;
+    font-size: 2rem;
+    width: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+  }
+
+  .ouvrir,
+  .open .fermer {
+    display: block;
+  }
+
+  .fermer {
+    display: none;
+  }
+
+  .open .ouvrir {
+    display: none;
+  }
+
+  #about img {
+    width: 50%;
+  }
+
+  #services {
+    margin-top: 150%;
+  }
+
+  #skills {
+    margin-top: 125%;
+  }
+  #formu {
+    margin-top: 50%;
+  }
+}
